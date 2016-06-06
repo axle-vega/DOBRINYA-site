@@ -1,0 +1,13 @@
+div.navPage { padding-top:15px; font-size:0.9rem;}
+div.navPage ul { padding:0px; margin:0px; list-style:none; }
+div.navPage ul li{
+	display:inline-block;
+	vertical-align:top;
+	margin:0 2px;
+}
+div.navPage ul li>a{
+	display:block;
+	padding:2px;
+	color:#000;
+}
+div.navPage a.activPage, div.navPage a:hover {color:#63c7b5; text-decoration:none;}

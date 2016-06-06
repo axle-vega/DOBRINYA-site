@@ -21,15 +21,17 @@ var path = {
         css: 'build/css/',
         img: 'build/img/',
         fonts: 'build/fonts/',
-        feedback: 'build/feedback/'
+        feedback: 'build/feedback/',
+        files: 'build/files/'
     },
     src: {
         html: 'src/*.html',
         js: 'src/js/*.js',
-        style: 'src/style/main.scss',
+        style: 'src/style/*.css',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        feedback: 'src/feedback/**/*.*'        
+        feedback: 'src/feedback/**/*.*',
+        files: 'src/files/**/*.*'
     },
     watch: {
         html: 'src/**/*.html',
@@ -37,7 +39,8 @@ var path = {
         style: 'src/style/**/*.scss',
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*',
-        feedback: 'src/feeback/**/*.*'
+        feedback: 'src/feeback/**/*.*',
+        files: 'src/files/**/*.*'
     },
     clean: './build'
 };
@@ -112,6 +115,10 @@ gulp.task('feedback:build', function() {
     gulp.src(path.src.feedback)
         .pipe(gulp.dest(path.build.feedback))
 });
+gulp.task('files:build', function() {
+    gulp.src(path.src.files)
+        .pipe(gulp.dest(path.build.files))
+});
 
 gulp.task('build', [
     'html:build',
@@ -119,7 +126,8 @@ gulp.task('build', [
     'style:build',
     'fonts:build',
     'image:build',
-    'feedback:build'
+    'feedback:build',
+    'files:build'
 ]);
 
 
